@@ -1,0 +1,60 @@
+html {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: darkgrey;
+}
+
+main h1 {
+    font-size: 48px;
+    color: black;
+    text-align: center;
+}
+
+.startContainer {
+    display: flex;
+    justify-content: center;
+}
+.startButton {
+    border: 2px solid white;
+    border-radius: 25%;
+    font-size: 25px;
+    margin-top: 45px;
+}
+
+.container {
+    border: 2px solid white;
+    height: 450px;
+    width: 50%;
+    justify-content: center;
+    margin: auto;
+    margin-top: 45px;
+    
+}
+
+.question {
+    border: 2px solid white;
+    height: 75px;
+    font-size: 24px;
+}
+
+.answerButton {
+    border: 2px solid white;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.first {
+    font-size: 24px;
+}
+
+.second {
+    font-size: 24px;
+}
+
+.third {
+    font-size: 24px;
+}
+
+.fourth {
+    font-size: 24px;
+}
