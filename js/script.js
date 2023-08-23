@@ -8,3 +8,22 @@ Fourth.
 Fifth.
 End game screen to type initials and save score to local storage and persist data. Start button to play again.
 */
+
+// Timer
+const timeEl = document.querySelector(".time");
+
+let secondsLeft = 100;
+
+function setTime() {
+    let timerInterval = setInterval(function() {
+        secondsLeft--;
+        timeEl.textContent = secondsLeft;
+
+        if(secondsLeft === 0) {
+            clearInterval(timerInterval);
+        }
+    }, 1000);
+    console.log(secondsLeft);
+};
+
+setTime();

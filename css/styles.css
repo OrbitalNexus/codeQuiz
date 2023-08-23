@@ -20,6 +20,14 @@ main h1 {
     margin-top: 45px;
 }
 
+.time {
+    border: 2px solid  white;
+    border-radius: 25%;
+    font-size: 25px;
+    margin: auto;
+
+}
+
 .container {
     border: 2px solid white;
     height: 450px;
