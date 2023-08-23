@@ -7,6 +7,14 @@ Third.
 Fourth.
 Fifth.
 End game screen to type initials and save score to local storage and persist data. Start button to play again.
+
+
+How to program questions. In a seperate js file target div element and use object array to get question and answers.
+Then use states to switch between them. For loop to go over different questions.
+
+check if answer if right: ?
+
+local storage for high scores.
 */
 
 // Timer
