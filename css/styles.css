@@ -19,12 +19,19 @@ main h1 {
     font-size: 25px;
     margin-top: 45px;
 }
+.startButton:hover {
+    background-color: green;
+}
+
+.startButton:focus {
+    background-color: green;
+}
 
 .time {
-    border: 2px solid  white;
-    border-radius: 25%;
     font-size: 25px;
     margin: auto;
+    text-align: center;
+    width: 45px;
 
 }
 
