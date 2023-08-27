@@ -1,11 +1,15 @@
 html {
     font-family: 'Times New Roman', Times, serif;
-    background-color: darkgrey;
+    background-color: white;
 }
 
 main h1 {
     font-size: 48px;
     color: black;
+    text-align: center;
+}
+
+.about p {
     text-align: center;
 }
 

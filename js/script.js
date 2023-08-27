@@ -17,9 +17,10 @@ check if answer is right: ?
 local storage for high scores.
 */
 
+
+
 // Timer
 const timeEl = document.querySelector(".time");
-const start = document.querySelector(".startButton")
 
 let secondsLeft = 10;
 
@@ -34,6 +35,7 @@ let quizTimer = function setTime() {
     }, 1000);
     console.log(secondsLeft);
     
+
 };
 
 start.addEventListener("click", quizTimer);
