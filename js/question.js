@@ -49,6 +49,7 @@ start.addEventListener("click", function() {
                         threeAnswer.innerHTML = questions[2].thirdAnswer;
                         fourAnswer.innerHTML = questions[2].fourthAnswer;
                     }}, 1500)
+
                 
                     questionContainer.addEventListener("click", function(event) {
                         let element = event.target;
@@ -60,10 +61,45 @@ start.addEventListener("click", function() {
                                 threeAnswer.innerHTML = questions[3].thirdAnswer;
                                 fourAnswer.innerHTML = questions[3].fourthAnswer;
                             }}, 1500)
+
                         })})})});
     
+    
+                        /*
+    if (questions[0]) {
+        questionContainer.addEventListener("click", function() {
+            if (element.matches("#answerOne")) {
+                alert("Correct.")
+            } else {
+                alert("Wrong.")
+            }
+        })
+    }
 
+    if (questions[1]) {
+        questionContainer.addEventListener("click", function() {
+            if (element.matches("#answerThree")) {
+                alert("Correct.")
+            }
+        })
+    }
 
+    if (questions[2]) {
+        questionContainer.addEventListener("click", function() {
+            if (element.matches("#answerThree")) {
+                alert("Correct.")
+            }
+        })
+    }
+
+    if (questions[4]) {
+        questionContainer.addEventListener("click", function() {
+            if (element.matches("#answerTwo")) {
+                alert("Correct.")
+            }
+        })
+    }
+    */
 
 let questions = [
     {
