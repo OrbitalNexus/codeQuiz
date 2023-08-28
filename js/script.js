@@ -22,7 +22,7 @@ local storage for high scores.
 // Timer
 const timeEl = document.querySelector(".time");
 
-let secondsLeft = 10;
+let secondsLeft = 71;
 
 let quizTimer = function setTime() {
     let timerInterval = setInterval(function() {
