@@ -10,14 +10,14 @@ const start = document.querySelector(".startButton")
 let hideBut = document.querySelector(".answerButton")
 let selectedAnswer = document.querySelector("#selected")
 
-console.log(qLoop);
 
-//aLoop.innerHTML = "";
-//oneAnswer.innerHTML = "";
-//twoAnswer.innerHTML = "";
+
+
+
 aLoop.classList.add("hide")
 console.log(hideBut);
 
+/*
 start.addEventListener("click", function(event) {
     aboutSection.innerHTML = "";
     aLoop.classList.remove("hide")
@@ -65,7 +65,7 @@ start.addEventListener("click", function(event) {
    
     })
 });
-
+*/
 
 
 let questions = [
@@ -77,21 +77,21 @@ let questions = [
     fourthAnswer: "Ducks.".trim(),
     },
     {
-    secondQuestion: "What color are grapes?".trim(),
+    firstQuestion: "What color are grapes?".trim(),
     firstAnswer: "Yellow.".trim(),
     secondAnswer: "Blue.".trim(),
     thirdAnswer: "Purple.".trim(),
     fourthAnswer: "Silver.".trim(),
     },
     {
-    thirdQuestion: "What is a Triangle?".trim(),
+    firstQuestion: "What is a Triangle?".trim(),
     firstAnswer: "A dinosaur.".trim(),
     secondAnswer: "A computer.".trim(),
     thirdAnswer: "A shape.".trim(),
     fourthAnswer: "A color.".trim(),
     },
     {
-    fourthQuestion: "What is space?",
+    firstQuestion: "What is space?",
     firstAnswer: "The great beyond.".trim(),
     secondAnswer: "A substrate of reality.".trim(),
     thirdAnswer: "Where star wars takes place.".trim(),
@@ -99,10 +99,22 @@ let questions = [
     },
 ];
 
-for (let i = 0; i < questions.length; i++) {
-    
-    
-}
+function mainForm() {
+    for (let i = 0; i >= questions.length; i++) {
+        setTimeout(function() {
+            qLoop.innerHTML = questions[i].firstQuestion;
+            oneAnswer.innerHTML = questions[i].firstAnswer;
+            twoAnswer.innerHTML = questions[i].secondAnswer;
+            threeAnswer.innerHTML = questions[i].thirdAnswer;
+            fourAnswer.innerHTML = questions[i].fourthAnswer;
+        }, 3000);
+    };
+};
+
+start.addEventListener("click", mainForm());
+
+
+
 
 
 /*
