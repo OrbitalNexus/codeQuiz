@@ -18,7 +18,7 @@ aLoop.classList.add("hide")
 console.log(hideBut);
 
 
-start.addEventListener("click", function(event) {
+start.addEventListener("click", function() {
     aboutSection.innerHTML = "";
     aLoop.classList.remove("hide")
     qLoop.innerHTML = questions[0].firstQuestion;
@@ -27,25 +27,25 @@ start.addEventListener("click", function(event) {
     threeAnswer.innerHTML = questions[0].thirdAnswer;
     fourAnswer.innerHTML = questions[0].fourthAnswer;
 
-    questionContainer.addEventListener("click", function(event) {
+    questionContainer.addEventListener("click", function() {
         let element = event.target;
-        if (element.matches("#answerOne", "#answerTwo", "#answerThree", "#answerFour")) {
+        if (element.matches(".butAns")) {
             qLoop.innerHTML = questions[1].firstQuestion;
             oneAnswer.innerHTML = questions[1].firstAnswer;
             twoAnswer.innerHTML = questions[1].secondAnswer;
             threeAnswer.innerHTML = questions[1].thirdAnswer;
             fourAnswer.innerHTML = questions[1].fourthAnswer;
         }
-    questionContainer.addEventListener("click", function(event) {
-        if (element.matches("#answerOne", "#answerTwo", "#answerThree", "#answerFour")) {
+    questionContainer.addEventListener("click", function() {
+        if (element.matches(".butAns")) {
             qLoop.innerHTML = questions[2].firstQuestion;
             oneAnswer.innerHTML = questions[2].firstAnswer;
             twoAnswer.innerHTML = questions[2].secondAnswer;
             threeAnswer.innerHTML = questions[2].thirdAnswer;
             fourAnswer.innerHTML = questions[2].fourthAnswer; 
         }
-    questionContainer.addEventListener("click", function(event) {
-        if (element.matches("#answerOne", "#answerTwo", "#answerThree", "#answerFour")) {
+    questionContainer.addEventListener("click", function() {
+        if (element.matches(".butAns")) {
             qLoop.innerHTML = questions[3].firstQuestion;
             oneAnswer.innerHTML = questions[3].firstAnswer;
             twoAnswer.innerHTML = questions[3].secondAnswer;
