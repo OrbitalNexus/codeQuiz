@@ -37,34 +37,30 @@ start.addEventListener("click", function() {
                 threeAnswer.innerHTML = questions[1].thirdAnswer;
                 fourAnswer.innerHTML = questions[1].fourthAnswer;
             }}, 1500)
-       
-
-    questionContainer.addEventListener("click", function(event) {
-        setTimeout(function() {
-            if (element.matches(".butAns")) {
-                qLoop.innerHTML = questions[2].firstQuestion;
-                oneAnswer.innerHTML = questions[2].firstAnswer;
-                twoAnswer.innerHTML = questions[2].secondAnswer;
-                threeAnswer.innerHTML = questions[2].thirdAnswer;
-                fourAnswer.innerHTML = questions[2].fourthAnswer; 
-                    }
-                }, 1500)
-                });
-                
     
-    questionContainer.addEventListener("click", function(event) {
-        setTimeout(function() {
-            if (element.matches(".butAns")) {
-                qLoop.innerHTML = questions[3].firstQuestion;
-                oneAnswer.innerHTML = questions[3].firstAnswer;
-                twoAnswer.innerHTML = questions[3].secondAnswer;
-                threeAnswer.innerHTML = questions[3].thirdAnswer;
-                fourAnswer.innerHTML = questions[3].fourthAnswer; 
-                }
-            }, 1500)
-    })
-});
-});
+    
+            questionContainer.addEventListener("click", function(event) {
+                let element = event.target;
+                setTimeout(function() {
+                    if (element.matches(".butAns")) {
+                        qLoop.innerHTML = questions[2].firstQuestion;
+                        oneAnswer.innerHTML = questions[2].firstAnswer;
+                        twoAnswer.innerHTML = questions[2].secondAnswer;
+                        threeAnswer.innerHTML = questions[2].thirdAnswer;
+                        fourAnswer.innerHTML = questions[2].fourthAnswer;
+                    }}, 1500)
+                
+                    questionContainer.addEventListener("click", function(event) {
+                        let element = event.target;
+                        setTimeout(function() {
+                            if (element.matches(".butAns")) {
+                                qLoop.innerHTML = questions[3].firstQuestion;
+                                oneAnswer.innerHTML = questions[3].firstAnswer;
+                                twoAnswer.innerHTML = questions[3].secondAnswer;
+                                threeAnswer.innerHTML = questions[3].thirdAnswer;
+                                fourAnswer.innerHTML = questions[3].fourthAnswer;
+                            }}, 1500)
+                        })})})});
     
 
 
