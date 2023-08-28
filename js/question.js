@@ -105,3 +105,17 @@ for (let i = 0; i < questions.length; i++) {
 }
 
 
+/*
+Refactor code into a for loop that iterates through question array
+Add a setTimeout delay after each iteration.
+
+Add If statements to check answer correct or wrong,
+by which array we are on and using element.matches.
+
+Then take to high score page after timer reaches zero,
+have input box to put in initials and save score in storage.
+
+Add a back button to home page.
+
+All done!
+*/
