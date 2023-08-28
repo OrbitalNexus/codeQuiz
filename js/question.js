@@ -17,7 +17,7 @@ let selectedAnswer = document.querySelector("#selected")
 aLoop.classList.add("hide")
 console.log(hideBut);
 
-/*
+
 start.addEventListener("click", function(event) {
     aboutSection.innerHTML = "";
     aLoop.classList.remove("hide")
@@ -29,15 +29,8 @@ start.addEventListener("click", function(event) {
 
     questionContainer.addEventListener("click", function(event) {
         let element = event.target;
-        if (element.matches("#answerOne")) {
-            selectedAnswer.textContent = "Correct"
-        } else if (element.matches("#answerTwo", "answerThree", "answerFour")) {
-            selectedAnswer.textContent = "Wrong"
-        }
-    
         if (element.matches("#answerOne", "#answerTwo", "#answerThree", "#answerFour")) {
-            //selectedAnswer.textContent = "";
-            qLoop.innerHTML = questions[1].secondQuestion;
+            qLoop.innerHTML = questions[1].firstQuestion;
             oneAnswer.innerHTML = questions[1].firstAnswer;
             twoAnswer.innerHTML = questions[1].secondAnswer;
             threeAnswer.innerHTML = questions[1].thirdAnswer;
@@ -45,7 +38,7 @@ start.addEventListener("click", function(event) {
         }
     questionContainer.addEventListener("click", function(event) {
         if (element.matches("#answerOne", "#answerTwo", "#answerThree", "#answerFour")) {
-            qLoop.innerHTML = questions[2].thirdQuestion;
+            qLoop.innerHTML = questions[2].firstQuestion;
             oneAnswer.innerHTML = questions[2].firstAnswer;
             twoAnswer.innerHTML = questions[2].secondAnswer;
             threeAnswer.innerHTML = questions[2].thirdAnswer;
@@ -53,7 +46,7 @@ start.addEventListener("click", function(event) {
         }
     questionContainer.addEventListener("click", function(event) {
         if (element.matches("#answerOne", "#answerTwo", "#answerThree", "#answerFour")) {
-            qLoop.innerHTML = questions[3].fourthQuestion;
+            qLoop.innerHTML = questions[3].firstQuestion;
             oneAnswer.innerHTML = questions[3].firstAnswer;
             twoAnswer.innerHTML = questions[3].secondAnswer;
             threeAnswer.innerHTML = questions[3].thirdAnswer;
@@ -65,7 +58,7 @@ start.addEventListener("click", function(event) {
    
     })
 });
-*/
+
 
 
 let questions = [
@@ -99,19 +92,16 @@ let questions = [
     },
 ];
 
-function mainForm() {
-    for (let i = 0; i >= questions.length; i++) {
-        setTimeout(function() {
-            qLoop.innerHTML = questions[i].firstQuestion;
-            oneAnswer.innerHTML = questions[i].firstAnswer;
-            twoAnswer.innerHTML = questions[i].secondAnswer;
-            threeAnswer.innerHTML = questions[i].thirdAnswer;
-            fourAnswer.innerHTML = questions[i].fourthAnswer;
-        }, 3000);
-    };
-};
-
-start.addEventListener("click", mainForm());
+/*
+start.addEventListener("click", function() {
+    for (let i = 0; i <= questions.length; i++) { 
+        qLoop.innerHTML = questions[i].firstQuestion, 
+        oneAnswer.innerHTML = questions[i].firstAnswer, 
+        twoAnswer.innerHTML = questions[i].secondAnswer,
+        threeAnswer.innerHTML = questions[i].thirdAnswer,
+        fourAnswer.innerHTML = questions[i].fourthAnswer;
+    }});
+*/
 
 
 
