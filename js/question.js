@@ -36,16 +36,6 @@ start.addEventListener("click", function() {
                 twoAnswer.innerHTML = questions[1].secondAnswer;
                 threeAnswer.innerHTML = questions[1].thirdAnswer;
                 fourAnswer.innerHTML = questions[1].fourthAnswer;
-
-                if (questions[0]) {
-                    questionContainer.addEventListener("click", function() {
-                        if (element.matches("#answerOne")) {
-                            alert("Correct.")
-                        } else {
-                            alert("Wrong.")
-                        }
-                    })
-                }
             }}, 1500)
     
     
@@ -76,6 +66,21 @@ start.addEventListener("click", function() {
     
     
                         /*
+    
+    
+     if (questions[0]) {
+            questionContainer.addEventListener("click", function() {
+                if (element.matches("#answerOne")) {
+                    alert("Correct.")
+                } else {
+                    alert("Wrong.")
+                }
+            })
+        }
+    
+    
+    
+    
     if (questions[0]) {
         questionContainer.addEventListener("click", function() {
             if (element.matches("#answerOne")) {
