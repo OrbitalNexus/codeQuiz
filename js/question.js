@@ -33,7 +33,7 @@ start.addEventListener("click", function(event) {
             selectedAnswer.textContent = "Correct"
         } else if (element.matches("#answerTwo", "answerThree", "answerFour")) {
             selectedAnswer.textContent = "Wrong"
-        } 
+        }
     
         if (element.matches("#answerOne", "#answerTwo", "#answerThree", "#answerFour")) {
             //selectedAnswer.textContent = "";
