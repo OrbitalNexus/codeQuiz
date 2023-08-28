@@ -8,6 +8,7 @@ let threeAnswer = document.querySelector("#answerThree")
 let fourAnswer = document.querySelector("#answerFour")
 const start = document.querySelector(".startButton")
 let hideBut = document.querySelector(".answerButton")
+let selectedAnswer = document.querySelector("#selected")
 
 console.log(qLoop);
 
@@ -16,7 +17,6 @@ console.log(qLoop);
 //twoAnswer.innerHTML = "";
 aLoop.classList.add("hide")
 console.log(hideBut);
-
 
 start.addEventListener("click", function(event) {
     aboutSection.innerHTML = "";
@@ -29,8 +29,14 @@ start.addEventListener("click", function(event) {
 
     questionContainer.addEventListener("click", function(event) {
         let element = event.target;
+        if (element.matches("#answerOne")) {
+            selectedAnswer.textContent = "Correct"
+        } else if (element.matches("#answerTwo", "answerThree", "answerFour")) {
+            selectedAnswer.textContent = "Wrong"
+        } 
     
         if (element.matches("#answerOne", "#answerTwo", "#answerThree", "#answerFour")) {
+            //selectedAnswer.textContent = "";
             qLoop.innerHTML = questions[1].secondQuestion;
             oneAnswer.innerHTML = questions[1].firstAnswer;
             twoAnswer.innerHTML = questions[1].secondAnswer;
