@@ -37,8 +37,28 @@ start.addEventListener("click", function(event) {
             threeAnswer.innerHTML = questions[1].thirdAnswer;
             fourAnswer.innerHTML = questions[1].fourthAnswer;
         }
+    questionContainer.addEventListener("click", function(event) {
+        if (element.matches("#answerOne", "#answerTwo", "#answerThree", "#answerFour")) {
+            qLoop.innerHTML = questions[2].thirdQuestion;
+            oneAnswer.innerHTML = questions[2].firstAnswer;
+            twoAnswer.innerHTML = questions[2].secondAnswer;
+            threeAnswer.innerHTML = questions[2].thirdAnswer;
+            fourAnswer.innerHTML = questions[2].fourthAnswer; 
+        }
+    questionContainer.addEventListener("click", function(event) {
+        if (element.matches("#answerOne", "#answerTwo", "#answerThree", "#answerFour")) {
+            qLoop.innerHTML = questions[3].fourthQuestion;
+            oneAnswer.innerHTML = questions[3].firstAnswer;
+            twoAnswer.innerHTML = questions[3].secondAnswer;
+            threeAnswer.innerHTML = questions[3].thirdAnswer;
+            fourAnswer.innerHTML = questions[3].fourthAnswer; 
+        }
     })
-})
+    
+    })
+   
+    })
+});
 
 
 
@@ -56,7 +76,21 @@ let questions = [
     secondAnswer: "Blue.".trim(),
     thirdAnswer: "Purple.".trim(),
     fourthAnswer: "Silver.".trim(),
-    }
+    },
+    {
+    thirdQuestion: "What is a Triangle?".trim(),
+    firstAnswer: "A dinosaur.".trim(),
+    secondAnswer: "A computer.".trim(),
+    thirdAnswer: "A shape.".trim(),
+    fourthAnswer: "A color.".trim(),
+    },
+    {
+    fourthQuestion: "What is space?",
+    firstAnswer: "The great beyond.".trim(),
+    secondAnswer: "A substrate of reality.".trim(),
+    thirdAnswer: "Where star wars takes place.".trim(),
+    fourthAnswer: "Lots of stars.".trim(),
+    },
 ];
 
 for (let i = 0; i < questions.length; i++) {
