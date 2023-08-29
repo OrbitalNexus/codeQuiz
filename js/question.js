@@ -9,7 +9,7 @@ let fourAnswer = document.querySelector("#answerFour")
 const start = document.querySelector(".startButton")
 let hideBut = document.querySelector(".answerButton")
 let selectedAnswer = document.querySelector("#selected")
-
+let currentQuestion = 0;
 
 
 
@@ -18,6 +18,48 @@ aLoop.classList.add("hide")
 console.log(hideBut);
 
 
+
+function nextQuestion() {
+    currentQuestion++
+    if (currentQuestion < questions.length) {
+        questionGen();
+    } else {
+        return;
+    }
+}
+
+function questionGen() {
+    aLoop.classList.remove("hide")
+    qLoop.textContent = questions[currentQuestion].firstQuestion;
+    for (let i = 0; i < aLoop.children.length; i++) {
+        aLoop.children[i].children[0].textContent = `${(i+1)}: ${questions[currentQuestion].choices[i]}`
+    }
+    console.log(aLoop);
+}
+
+function checker(answer) {
+    if (questions[currentQuestion].answer === questions.choices[answer.id]) {
+        selectedAnswer.textContent = "Correct."
+    } else {
+        selectedAnswer.textContent = "Wrong."
+    }
+}
+console.log(selectedAnswer);
+start.addEventListener("click", function() {
+    questionGen();
+
+});
+
+aLoop.addEventListener("click", function() {
+    //if (e.target.matches("button")) {
+        //checker(e.target); 
+        nextQuestion();
+    }
+    
+//}
+);
+
+/*
 start.addEventListener("click", function() {
     aboutSection.innerHTML = "";
     aLoop.classList.remove("hide")
@@ -64,14 +106,14 @@ start.addEventListener("click", function() {
 
                         })})})});
     
-    
+    */
                         /*
     
     
      if (questions[0]) {
             questionContainer.addEventListener("click", function() {
                 if (element.matches("#answerOne")) {
-                    alert("Correct.")
+                    selectedAnswer.textContent = "Correct."
                 } else {
                     alert("Wrong.")
                 }
@@ -119,31 +161,44 @@ start.addEventListener("click", function() {
 let questions = [
     {
     firstQuestion: "What is Yellow?".trim(),
-    firstAnswer: "A color.".trim(),
-    secondAnswer: "A shape.".trim(),
-    thirdAnswer: "A truck.".trim(),
-    fourthAnswer: "Ducks.".trim(),
+    choices: [
+        "A color.",
+        "A shape.",
+        "A truck.",
+        "Ducks.",
+    ], 
+    answer: "A color."
+    
     },
     {
     firstQuestion: "What color are grapes?".trim(),
-    firstAnswer: "Yellow.".trim(),
-    secondAnswer: "Blue.".trim(),
-    thirdAnswer: "Purple.".trim(),
-    fourthAnswer: "Silver.".trim(),
+    choices: [
+        "Yellow.",
+        "Blue.",
+        "Purple.",
+        "Silver.",
+    ], 
+    answer: "Purple."
     },
     {
     firstQuestion: "What is a Triangle?".trim(),
-    firstAnswer: "A dinosaur.".trim(),
-    secondAnswer: "A computer.".trim(),
-    thirdAnswer: "A shape.".trim(),
-    fourthAnswer: "A color.".trim(),
+    choices: [
+        "A dinosaur.",
+        "A computer.",
+        "A shape.",
+        "A color.",
+    ], 
+    answer: "A shape."
     },
     {
     firstQuestion: "What is space?",
-    firstAnswer: "The great beyond.".trim(),
-    secondAnswer: "A substrate of reality.".trim(),
-    thirdAnswer: "Where star wars takes place.".trim(),
-    fourthAnswer: "Lots of stars.".trim(),
+    choices: [
+        "The great beyond.",
+        "A substrate of reality.",
+        "Where star wars takes place.",
+        "Lots of stars.",
+    ], 
+    answer: "Lots of stars."
     },
 ];
 
