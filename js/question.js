@@ -10,12 +10,13 @@ const start = document.querySelector(".startButton")
 let hideBut = document.querySelector(".answerButton")
 let selectedAnswer = document.querySelector("#selected")
 let currentQuestion = 0;
-
+let answerButs = document.querySelectorAll(".buttonAns");
+let Butman = document.querySelectorAll(".butMan")
 
 
 
 aLoop.classList.add("hide")
-console.log(hideBut);
+//console.log(hideBut);
 
 
 
@@ -32,32 +33,37 @@ function questionGen() {
     aLoop.classList.remove("hide")
     qLoop.textContent = questions[currentQuestion].firstQuestion;
     for (let i = 0; i < aLoop.children.length; i++) {
-        aLoop.children[i].children[0].textContent = `${(i+1)}: ${questions[currentQuestion].choices[i]}`
+        Butman[i].textContent = `${(i+1)}: ${questions[currentQuestion].choices[i]}`
     }
     console.log(aLoop);
 }
 
-function checker(answer) {
-    if (questions[currentQuestion].answer === questions.choices[answer.id]) {
-        selectedAnswer.textContent = "Correct."
-    } else {
-        selectedAnswer.textContent = "Wrong."
-    }
-}
-console.log(selectedAnswer);
+function checker() {
+        if (questions[currentQuestion].answer === questions[currentQuestion].answer.id) {
+            selectedAnswer.textContent = "Correct."
+        } else {
+            selectedAnswer.textContent = "Wrong."
+        }
+        };
+
+   
+
 start.addEventListener("click", function() {
     questionGen();
 
 });
 
-aLoop.addEventListener("click", function() {
-    //if (e.target.matches("button")) {
-        //checker(e.target); 
-        nextQuestion();
-    }
-    
-//}
-);
+
+aLoop.addEventListener("click", function(e) { 
+        let element = e.target;    
+        if (element.matches(".butMan")) {
+            checker();
+            setTimeout(function() {
+                nextQuestion();
+            }, 1000)
+        }
+    });
+
 
 /*
 start.addEventListener("click", function() {

@@ -49,6 +49,13 @@ main h1 {
     
 }
 
+
+button {
+    justify-content: flex-start;
+    width: 150px;
+    padding: 5px 5px 5px 5px;
+    margin: 5px 5px 5px 5px;
+}
 .question {
     border: 2px solid white;
     height: 75px;
@@ -60,9 +67,17 @@ main h1 {
     border: 0;
     display: flex;
     justify-content: flex-start;
-    width: auto;
+    width: 25px;
     height: auto;
     text-decoration: none;
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: 2px solid black;
+    width: 160px;
 }
 
 .first {
