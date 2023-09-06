@@ -43,8 +43,11 @@ function checker(answer) {
             selectedAnswer.textContent = "Correct."
         } else {
             selectedAnswer.textContent = "Wrong."
+            secondsLeft - 7;
         }
         };
+
+
 
    
 
@@ -56,7 +59,7 @@ start.addEventListener("click", function() {
 
 aLoop.addEventListener("click", function(e) { 
         let element = e.target;    
-        if (element.matches(".butMan")) {
+        if (element.matches("button")) {
             checker(element);
             setTimeout(function() {
                 nextQuestion();
