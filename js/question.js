@@ -38,8 +38,8 @@ function questionGen() {
     console.log(aLoop);
 }
 
-function checker() {
-        if (questions[currentQuestion].answer === questions[currentQuestion].answer.id) {
+function checker(answer) {
+        if (questions[currentQuestion].answer === questions[currentQuestion].choices[answer.id]) {
             selectedAnswer.textContent = "Correct."
         } else {
             selectedAnswer.textContent = "Wrong."
@@ -57,7 +57,7 @@ start.addEventListener("click", function() {
 aLoop.addEventListener("click", function(e) { 
         let element = e.target;    
         if (element.matches(".butMan")) {
-            checker();
+            checker(element);
             setTimeout(function() {
                 nextQuestion();
             }, 1000)
