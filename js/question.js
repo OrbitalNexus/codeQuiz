@@ -43,7 +43,8 @@ function checker(answer) {
             selectedAnswer.textContent = "Correct."
         } else {
             selectedAnswer.textContent = "Wrong."
-            secondsLeft - 7;
+            secondsLeft = secondsLeft - 7;
+            timeEl.textContent = -7;
         }
         };
 
@@ -63,7 +64,7 @@ aLoop.addEventListener("click", function(e) {
             checker(element);
             setTimeout(function() {
                 nextQuestion();
-            }, 1000)
+            }, 850)
         }
     });
 
@@ -169,45 +170,105 @@ start.addEventListener("click", function() {
 
 let questions = [
     {
-    firstQuestion: "What is Yellow?".trim(),
+    firstQuestion: "How to add a single line comment?".trim(),
     choices: [
-        "A color.",
-        "A shape.",
-        "A truck.",
-        "Ducks.",
+        "//",
+        "/*",
+        "*/",
+        "<?",
     ], 
-    answer: "A color."
+    answer: "//"
     
     },
     {
-    firstQuestion: "What color are grapes?".trim(),
+    firstQuestion: "What case does JavaScript use?".trim(),
     choices: [
-        "Yellow.",
-        "Blue.",
-        "Purple.",
-        "Silver.",
+        "Snake",
+        "Kebab",
+        "Camel",
+        "Pascal",
     ], 
-    answer: "Purple."
+    answer: "Camel"
     },
     {
-    firstQuestion: "What is a Triangle?".trim(),
+    firstQuestion: "What is a Class in JavaScript?".trim(),
     choices: [
-        "A dinosaur.",
-        "A computer.",
-        "A shape.",
-        "A color.",
+        "A way to use CSS.",
+        "A blueprint for creating objects.",
+        "A single array.",
+        "A naming convention.",
     ], 
-    answer: "A shape."
+    answer: "A blueprint for creating objects."
     },
     {
-    firstQuestion: "What is space?",
+    firstQuestion: "What kind of language is JavaScript?",
     choices: [
-        "The great beyond.",
-        "A substrate of reality.",
-        "Where star wars takes place.",
-        "Lots of stars.",
+        "A mental language.",
+        "A sign language.",
+        "A spoken language.",
+        "A prototype-based language.",
     ], 
-    answer: "Lots of stars."
+    answer: "A prototype-based language."
+    },
+    {
+    firstQuestion: "What variables does Hoisting apply to?",
+    choices: [
+        "Let",
+        "Var",
+        "Const",
+        "Int",
+    ], 
+    answer: "Var"
+    },
+    {
+    firstQuestion: "How do you create a New Object in JavaScript?",
+    choices: [
+        "Use object literals or the 'new' keyword.",
+        "Use a constructor.",
+        "Return a character from index.",
+        "Using an external file.",
+    ], 
+    answer: "Use object literals or the 'new' keyword."
+    },
+    {
+    firstQuestion: "What is the For... In Loop in JavaScript?",
+    choices: [
+        "A fancy way of saying forever.",
+        "Used to iterate over the properties of an object.",
+        "To be determined.",
+        "Allows you to refer to the object.",
+    ], 
+    answer: "Used to iterate over the properties of an object."
+    },
+    {
+    firstQuestion: "What is a Higher-Order function?",
+    choices: [
+        "Functions capable of accepting other functions as arguments.",
+        "A much better function.",
+        "The only way to do functions.",
+        "These are constants and block-scoped.",
+    ], 
+    answer: "Functions capable of accepting other functions as arguments."
+    },
+{
+    firstQuestion: "What is an Escape character?",
+    choices: [
+        "<?",
+        "*",
+        "'\'",
+        "/",
+    ], 
+    answer: "'\'"
+    },
+    {
+    firstQuestion: "What are arrow functions?",
+    choices: [
+        "Short way of writing function expressions.",
+        "A way to map out the route of a function.",
+        "Something in ES4.",
+        "A boolean.",
+    ], 
+    answer: "Short way of writing function expressions."
     },
 ];
 
