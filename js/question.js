@@ -251,14 +251,14 @@ let questions = [
     answer: "Functions capable of accepting other functions as arguments."
     },
 {
-    firstQuestion: "What is an Escape character?",
+    firstQuestion: "What is JSON?",
     choices: [
-        "<?",
-        "*",
-        "'\'",
-        "/",
+        "Jumping Spider Orange Night.",
+        "Javascript Orwellian Notion.",
+        "JavaScript Object Notation.",
+        "Jeffry Sally Or Nancy.",
     ], 
-    answer: "'\'"
+    answer: "JavaScript Object Notation."
     },
     {
     firstQuestion: "What are arrow functions?",
