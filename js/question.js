@@ -25,7 +25,8 @@ function nextQuestion() {
     if (currentQuestion < questions.length) {
         questionGen();
     } else {
-        return;
+        selectedAnswer.textContent = "DONE"
+        window.location.assign("./scores.html")
     }
 }
 

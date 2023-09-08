@@ -29,8 +29,10 @@ let quizTimer = function setTime() {
         secondsLeft--;
         timeEl.textContent = secondsLeft;
 
-        if(secondsLeft === 0) {
+        if(secondsLeft <= 0) {
             clearInterval(timerInterval);
+            selectedAnswer.textContent = "DONE"
+            window.location.assign("./scores.html")
         }
     }, 1000);
     console.log(secondsLeft);
