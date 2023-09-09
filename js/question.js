@@ -13,12 +13,19 @@ let currentQuestion = 0;
 let answerButs = document.querySelectorAll(".buttonAns");
 let Butman = document.querySelectorAll(".butMan")
 let userHighScore = document.querySelector("#userScoreDone")
+let scoreBoardMain = document.querySelector(".scoreboard")
+let containerMain = document.querySelector(".container");
+let newUserScore = document.querySelector("#newScoreUser")
+let highScore = document.querySelector("#userNewScore")
+
 
 
 
 aLoop.classList.add("hide")
-//console.log(hideBut);
+scoreBoardMain.classList.add("hide")
+highScore.classList.add("hide")
 
+//console.log(hideBut);
 
 
 function nextQuestion() {
@@ -26,11 +33,16 @@ function nextQuestion() {
     if (currentQuestion < questions.length) {
         questionGen();
     } else {
-        selectedAnswer.textContent = "DONE"
         let userScore = secondsLeft
-        window.location.assign("./scores.html")
-        userHighScore.textContent = userScore;
-        console.log(userScore);
+        containerMain.classList.add("hide")
+        scoreBoardMain.classList.remove("hide")
+        let newScore = timeEl.textContent = secondsLeft + 10;
+        newUserScore.textContent = newScore;
+        timeEl.classList.add("hide");
+        highScore.classList.remove("hide")
+        selectedAnswer.textContent = "";
+
+
     }
 }
 
