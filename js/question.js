@@ -12,6 +12,7 @@ let selectedAnswer = document.querySelector("#selected")
 let currentQuestion = 0;
 let answerButs = document.querySelectorAll(".buttonAns");
 let Butman = document.querySelectorAll(".butMan")
+let userHighScore = document.querySelector("#userScoreDone")
 
 
 
@@ -26,12 +27,16 @@ function nextQuestion() {
         questionGen();
     } else {
         selectedAnswer.textContent = "DONE"
+        let userScore = secondsLeft
         window.location.assign("./scores.html")
+        userHighScore.textContent = userScore;
+        console.log(userScore);
     }
 }
 
 function questionGen() {
-    aLoop.classList.remove("hide")
+    aLoop.classList.remove("hide");
+    start.classList.add("hide");
     qLoop.textContent = questions[currentQuestion].firstQuestion;
     for (let i = 0; i < aLoop.children.length; i++) {
         Butman[i].textContent = `${(i+1)}: ${questions[currentQuestion].choices[i]}`
@@ -46,6 +51,8 @@ function checker(answer) {
             selectedAnswer.textContent = "Wrong."
             secondsLeft = secondsLeft - 7;
             timeEl.textContent = -7;
+            
+            
         }
         };
 

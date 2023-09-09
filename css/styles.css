@@ -90,20 +90,21 @@ button {
     font-size: 48px;
 }
 
-.first {
-    font-size: 24px;
+.scoreboard {
+    border: 2px solid black;
+    width: 500px;
+    margin: auto;
+}
+.scorecard {
+    border: 2px solid black;
+    padding: 10px 10px 10px 10px;
 }
 
-.second {
-    font-size: 24px;
-}
-
-.third {
-    font-size: 24px;
-}
-
-.fourth {
-    font-size: 24px;
+#userScoreDone {
+    border: 2px solid black;
+    padding: 10px 10px 20px 10px;
+    width: 35px;
+    margin: auto auto 10px auto;
 }
 
 .hide {
