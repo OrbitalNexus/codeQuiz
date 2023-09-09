@@ -59,10 +59,12 @@ function questionGen() {
 function checker(answer) {
         if (questions[currentQuestion].answer === questions[currentQuestion].choices[answer.id]) {
             selectedAnswer.textContent = "Correct."
+            secondsLeft = secondsLeft + 5;
+            timeEl.textContent = "+5";
         } else {
             selectedAnswer.textContent = "Wrong."
             secondsLeft = secondsLeft - 7;
-            timeEl.textContent = -7;
+            timeEl.textContent = "-7";
             
             
         }
