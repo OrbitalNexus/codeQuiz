@@ -31,7 +31,6 @@ let quizTimer = function setTime() {
 
         if(secondsLeft <= 0)  {
             clearInterval(timerInterval);
-            selectedAnswer.textContent = "DONE"
             containerMain.classList.add("hide")
             scoreBoardMain.classList.remove("hide")
         }

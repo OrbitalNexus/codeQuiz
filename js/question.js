@@ -15,19 +15,84 @@ let Butman = document.querySelectorAll(".butMan")
 let userHighScore = document.querySelector("#userScoreDone")
 let scoreBoardMain = document.querySelector(".scoreboard")
 let containerMain = document.querySelector(".container");
-let newUserScore = document.querySelector("#newScoreUser")
+let newUserScore = document.querySelector("#newScoreUser");
 let highScore = document.querySelector("#userNewScore")
+let buttonSave = document.querySelector("#saveButton")
+let userInput = document.querySelector("userName");
+let inputField = document.querySelector(".inputField")
 
-
+let firstPlaceUser = document.querySelector("#firstPlace")
+let secondPlaceUser = document.querySelector("#secondPlace")
+let thirdPlaceUser = document.querySelector("#thirdPlace")
+let fourthPlaceUser = document.querySelector("#fourthPlace")
+let fifthPlaceUser = document.querySelector("#fifthPlace")
 
 
 aLoop.classList.add("hide")
 scoreBoardMain.classList.add("hide")
 highScore.classList.add("hide")
 
+const USER_KEY = 'user'
+const SCORE_KEY = 'newScore'
+
+let userBad = userInput;
+let scoreBad = newUserScore;
+
+function jokerVill () {
+   let newUser = localStorage.getItem(USER_KEY);
+   let finalScore = localStorage.getItem(SCORE_KEY);
+
+    secondPlaceUser.textContent = newUser + " " + finalScore
+}
+
+function batmanHero () {
+    let user = localStorage.setItem(USER_KEY, 'user');
+    let newScore = localStorage.setItem(SCORE_KEY, 'newScore');
+    let infinite = localStorage.getItem(USER_KEY);
+    let totally = localStorage.getItem(SCORE_KEY);
+
+    firstPlaceUser.textContent = infinite + " " + totally;
+
+}
+
+buttonSave.addEventListener("click", function() {
+    batmanHero();
+});
+
+console.log(buttonSave);
+
+
 //console.log(hideBut);
+/*
+function highScores() {
+    let initials = localStorage.getItem(USER_KEY)
+    let newHighScore = localStorage.getItem(SCORE_KEY)
 
+    if (!initials || !newHighScore) return;
 
+    firstPlaceUser.textContent = initials + " " + newHighScore;
+    endOfQuiz();
+}
+console.log(buttonSave)
+
+ buttonSave.addEventListener("click", function() {
+
+    let initials = document.querySelector("userName").value;
+    let newHighScore = document.querySelector("#newScoreUser").value;
+
+    if (initials === '') {
+        displayMessage('error', 'Cannot be blank')
+    }
+
+    localStorage.setItem(USER_KEY, initials);
+    localStorage.setItem(SCORE_KEY, newHighScore);
+
+    inputField.classList.add("hide")
+    inputField.textContent = "Thanks"
+
+ });
+ 
+*/
 function nextQuestion() {
     currentQuestion++
     if (currentQuestion < questions.length) {
@@ -41,6 +106,8 @@ function nextQuestion() {
         timeEl.classList.add("hide");
         highScore.classList.remove("hide")
         selectedAnswer.textContent = "";
+        jokerVill();
+        
 
 
     }
