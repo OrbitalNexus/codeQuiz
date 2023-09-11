@@ -27,13 +27,12 @@ let thirdPlaceUser = document.querySelector("#thirdPlace")
 let fourthPlaceUser = document.querySelector("#fourthPlace")
 let fifthPlaceUser = document.querySelector("#fifthPlace")
 
-
 aLoop.classList.add("hide")
 scoreBoardMain.classList.add("hide")
 highScore.classList.add("hide")
 
 const USER_KEY = 'user'
-const SCORE_KEY = 'newScore'
+const SCORE_KEY = 'score'
 
 let userBad = userInput;
 let scoreBad = newUserScore;
@@ -47,7 +46,7 @@ function jokerVill () {
 
 function batmanHero () {
     let user = localStorage.setItem(USER_KEY, 'user');
-    let newScore = localStorage.setItem(SCORE_KEY, 'newScore');
+    let newScore = localStorage.setItem(SCORE_KEY, 'score');
     let infinite = localStorage.getItem(USER_KEY);
     let totally = localStorage.getItem(SCORE_KEY);
 
@@ -59,40 +58,7 @@ buttonSave.addEventListener("click", function() {
     batmanHero();
 });
 
-console.log(buttonSave);
 
-
-//console.log(hideBut);
-/*
-function highScores() {
-    let initials = localStorage.getItem(USER_KEY)
-    let newHighScore = localStorage.getItem(SCORE_KEY)
-
-    if (!initials || !newHighScore) return;
-
-    firstPlaceUser.textContent = initials + " " + newHighScore;
-    endOfQuiz();
-}
-console.log(buttonSave)
-
- buttonSave.addEventListener("click", function() {
-
-    let initials = document.querySelector("userName").value;
-    let newHighScore = document.querySelector("#newScoreUser").value;
-
-    if (initials === '') {
-        displayMessage('error', 'Cannot be blank')
-    }
-
-    localStorage.setItem(USER_KEY, initials);
-    localStorage.setItem(SCORE_KEY, newHighScore);
-
-    inputField.classList.add("hide")
-    inputField.textContent = "Thanks"
-
- });
- 
-*/
 function nextQuestion() {
     currentQuestion++
     if (currentQuestion < questions.length) {
@@ -157,105 +123,6 @@ aLoop.addEventListener("click", function(e) {
         }
     });
 
-
-/*
-start.addEventListener("click", function() {
-    aboutSection.innerHTML = "";
-    aLoop.classList.remove("hide")
-    qLoop.innerHTML = questions[0].firstQuestion;
-    oneAnswer.innerHTML = questions[0].firstAnswer;
-    twoAnswer.innerHTML = questions[0].secondAnswer;
-    threeAnswer.innerHTML = questions[0].thirdAnswer;
-    fourAnswer.innerHTML = questions[0].fourthAnswer;
-
-    questionContainer.addEventListener("click", function(event) {
-        let element = event.target;
-        setTimeout(function() {
-            if (element.matches(".butAns")) {
-                qLoop.innerHTML = questions[1].firstQuestion;
-                oneAnswer.innerHTML = questions[1].firstAnswer;
-                twoAnswer.innerHTML = questions[1].secondAnswer;
-                threeAnswer.innerHTML = questions[1].thirdAnswer;
-                fourAnswer.innerHTML = questions[1].fourthAnswer;
-            }}, 1500)
-    
-    
-            questionContainer.addEventListener("click", function(event) {
-                let element = event.target;
-                setTimeout(function() {
-                    if (element.matches(".butAns")) {
-                        qLoop.innerHTML = questions[2].firstQuestion;
-                        oneAnswer.innerHTML = questions[2].firstAnswer;
-                        twoAnswer.innerHTML = questions[2].secondAnswer;
-                        threeAnswer.innerHTML = questions[2].thirdAnswer;
-                        fourAnswer.innerHTML = questions[2].fourthAnswer;
-                    }}, 1500)
-
-                
-                    questionContainer.addEventListener("click", function(event) {
-                        let element = event.target;
-                        setTimeout(function() {
-                            if (element.matches(".butAns")) {
-                                qLoop.innerHTML = questions[3].firstQuestion;
-                                oneAnswer.innerHTML = questions[3].firstAnswer;
-                                twoAnswer.innerHTML = questions[3].secondAnswer;
-                                threeAnswer.innerHTML = questions[3].thirdAnswer;
-                                fourAnswer.innerHTML = questions[3].fourthAnswer;
-                            }}, 1500)
-
-                        })})})});
-    
-    */
-                        /*
-    
-    
-     if (questions[0]) {
-            questionContainer.addEventListener("click", function() {
-                if (element.matches("#answerOne")) {
-                    selectedAnswer.textContent = "Correct."
-                } else {
-                    alert("Wrong.")
-                }
-            })
-        }
-    
-    
-    
-    
-    if (questions[0]) {
-        questionContainer.addEventListener("click", function() {
-            if (element.matches("#answerOne")) {
-                alert("Correct.")
-            } else {
-                alert("Wrong.")
-            }
-        })
-    }
-
-    if (questions[1]) {
-        questionContainer.addEventListener("click", function() {
-            if (element.matches("#answerThree")) {
-                alert("Correct.")
-            }
-        })
-    }
-
-    if (questions[2]) {
-        questionContainer.addEventListener("click", function() {
-            if (element.matches("#answerThree")) {
-                alert("Correct.")
-            }
-        })
-    }
-
-    if (questions[4]) {
-        questionContainer.addEventListener("click", function() {
-            if (element.matches("#answerTwo")) {
-                alert("Correct.")
-            }
-        })
-    }
-    */
 
 let questions = [
     {
@@ -360,21 +227,6 @@ let questions = [
     answer: "Short way of writing function expressions."
     },
 ];
-
-/*
-start.addEventListener("click", function() {
-    for (let i = 0; i <= questions.length; i++) { 
-        qLoop.innerHTML = questions[i].firstQuestion, 
-        oneAnswer.innerHTML = questions[i].firstAnswer, 
-        twoAnswer.innerHTML = questions[i].secondAnswer,
-        threeAnswer.innerHTML = questions[i].thirdAnswer,
-        fourAnswer.innerHTML = questions[i].fourthAnswer;
-    }});
-*/
-
-
-
-
 
 /*
 Refactor code into a for loop that iterates through question array
