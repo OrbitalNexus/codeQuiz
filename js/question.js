@@ -9,7 +9,7 @@ let fourAnswer = document.querySelector("#answerFour")
 const start = document.querySelector(".startButton")
 let hideBut = document.querySelector(".answerButton")
 let selectedAnswer = document.querySelector("#selected")
-let currentQuestion = 0;
+
 let answerButs = document.querySelectorAll(".buttonAns");
 let Butman = document.querySelectorAll(".butMan")
 let userHighScore = document.querySelector("#userScoreDone")
@@ -26,6 +26,9 @@ let secondPlaceUser = document.querySelector("#secondPlace")
 let thirdPlaceUser = document.querySelector("#thirdPlace")
 let fourthPlaceUser = document.querySelector("#fourthPlace")
 let fifthPlaceUser = document.querySelector("#fifthPlace")
+
+let currentQuestion = 0;
+
 
 aLoop.classList.add("hide")
 scoreBoardMain.classList.add("hide")
