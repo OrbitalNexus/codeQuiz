@@ -18,7 +18,7 @@ let containerMain = document.querySelector(".container");
 let newUserScore = document.querySelector("#newScoreUser");
 let highScore = document.querySelector("#userNewScore")
 let buttonSave = document.querySelector("#saveButton")
-let userInput = document.querySelector("userName");
+let userInput = document.querySelector("#Batman");
 let inputField = document.querySelector(".inputField")
 
 let firstPlaceUser = document.querySelector("#firstPlace")
@@ -28,6 +28,8 @@ let fourthPlaceUser = document.querySelector("#fourthPlace")
 let fifthPlaceUser = document.querySelector("#fifthPlace")
 
 let currentQuestion = 0;
+let newScore;
+
 
 
 aLoop.classList.add("hide")
@@ -37,24 +39,26 @@ highScore.classList.add("hide")
 const USER_KEY = 'user'
 const SCORE_KEY = 'score'
 
-let userBad = userInput;
-let scoreBad = newUserScore;
-
-function jokerVill () {
-   let newUser = localStorage.getItem(USER_KEY);
-   let finalScore = localStorage.getItem(SCORE_KEY);
-
-    secondPlaceUser.textContent = newUser + " " + finalScore
-}
 
 function batmanHero () {
-    let user = localStorage.setItem(USER_KEY, 'user');
-    let newScore = localStorage.setItem(SCORE_KEY, 'score');
-    let infinite = localStorage.getItem(USER_KEY);
-    let totally = localStorage.getItem(SCORE_KEY);
+  let userBad = userInput.value
+  
+  if (userBad) {
+    let userBadScore = {
+        userName: userBad.trim(),
+        userScore: newScore,
+    }
+    userInput.value = ''
+    userHighScore = JSON.parse(localStorage.getItem(USER_KEY)) || [];
+    userHighScore.push(userBadScore);
+    localStorage.setItem(USER_KEY, JSON.stringify(userHighScore));
+    
+  }
 
-    firstPlaceUser.textContent = infinite + " " + totally;
+};
 
+function jokerVill () {
+   
 }
 
 buttonSave.addEventListener("click", function() {
@@ -70,15 +74,12 @@ function nextQuestion() {
         let userScore = secondsLeft
         containerMain.classList.add("hide")
         scoreBoardMain.classList.remove("hide")
-        let newScore = timeEl.textContent = secondsLeft + 10;
+        newScore = timeEl.textContent = secondsLeft + 10;
         newUserScore.textContent = newScore;
+        console.log(`newUserScore: ${newUserScore}`)
         timeEl.classList.add("hide");
         highScore.classList.remove("hide")
         selectedAnswer.textContent = "";
-        jokerVill();
-        
-
-
     }
 }
 
@@ -126,6 +127,8 @@ aLoop.addEventListener("click", function(e) {
         }
     });
 
+
+let highScores = [];
 
 let questions = [
     {
