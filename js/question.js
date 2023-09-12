@@ -12,7 +12,6 @@ let selectedAnswer = document.querySelector("#selected")
 
 let answerButs = document.querySelectorAll(".buttonAns");
 let Butman = document.querySelectorAll(".butMan")
-let userHighScore = document.querySelector("#userScoreDone")
 let scoreBoardMain = document.querySelector(".scoreboard")
 let containerMain = document.querySelector(".container");
 let newUserScore = document.querySelector("#newScoreUser");
@@ -21,12 +20,16 @@ let buttonSave = document.querySelector("#saveButton")
 let userInput = document.querySelector("#Batman");
 let inputField = document.querySelector(".inputField")
 
-let firstPlaceUser = document.querySelector("#firstPlace")
-let secondPlaceUser = document.querySelector("#secondPlace")
-let thirdPlaceUser = document.querySelector("#thirdPlace")
-let fourthPlaceUser = document.querySelector("#fourthPlace")
-let fifthPlaceUser = document.querySelector("#fifthPlace")
+let keyColumOne = document.querySelectorAll(".key1")
+let keyColumTwo = document.querySelectorAll(".key2")
+let firstPlaceUser = document.querySelector("#One")
+let secondPlaceUser = document.querySelector("#Two")
+let thirdPlaceUser = document.querySelector("#Three")
+let fourthPlaceUser = document.querySelector("#Four")
+let fifthPlaceUser = document.querySelector("#Five")
+let awesomeKey = document.querySelector("#keyAwesome");
 
+let userHighScore;
 let currentQuestion = 0;
 let newScore;
 
@@ -52,14 +55,19 @@ function batmanHero () {
     userHighScore = JSON.parse(localStorage.getItem(USER_KEY)) || [];
     userHighScore.push(userBadScore);
     localStorage.setItem(USER_KEY, JSON.stringify(userHighScore));
-    secondPlaceUser.textContent = userHighScore;
+
+    jokerVill();
 
   }
 
 };
 
 function jokerVill () {
-   
+    for (let i = 0; i > userHighScore.length; i++) {
+        userHighScore[i].userName;
+        userHighScore[i].userScore;
+        awesomeKey.textContent = userHighScore[i].userName
+    }
 }
 
 buttonSave.addEventListener("click", function() {
