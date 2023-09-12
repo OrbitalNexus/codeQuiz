@@ -20,13 +20,11 @@ let buttonSave = document.querySelector("#saveButton")
 let userInput = document.querySelector("#Batman");
 let inputField = document.querySelector(".inputField")
 
-let keyColumOne = document.querySelectorAll(".key1")
-let keyColumTwo = document.querySelectorAll(".key2")
-let firstPlaceUser = document.querySelector("#One")
-let secondPlaceUser = document.querySelector("#Two")
-let thirdPlaceUser = document.querySelector("#Three")
-let fourthPlaceUser = document.querySelector("#Four")
-let fifthPlaceUser = document.querySelector("#Five")
+let firstPlaceUser = document.querySelector("#key1")
+let secondPlaceUser = document.querySelector("#key2")
+let thirdPlaceUser = document.querySelector("#key3")
+let fourthPlaceUser = document.querySelector("#key4")
+let fifthPlaceUser = document.querySelector("#key5")
 let awesomeKey = document.querySelector("#keyAwesome");
 
 let userHighScore;
@@ -63,12 +61,13 @@ function batmanHero () {
 };
 
 function jokerVill () {
-    for (let i = 0; i > userHighScore.length; i++) {
-        userHighScore[i].userName;
-        userHighScore[i].userScore;
-        awesomeKey.textContent = userHighScore[i].userName
-    }
-}
+        
+            firstPlaceUser.textContent = userHighScore[0].userName + " " + userHighScore[0].userScore;
+            secondPlaceUser.textContent = userHighScore[1].userName + " " + userHighScore[1].userScore;
+            thirdPlaceUser.textContent = userHighScore[2].userName + " " + userHighScore[2].userScore;
+            fourthPlaceUser.textContent = userHighScore[3].userName + " " + userHighScore[3].userScore;
+            fifthPlaceUser.textContent = userHighScore[4].userName + " " + userHighScore[4].userScore;
+        }
 
 buttonSave.addEventListener("click", function() {
     batmanHero();
