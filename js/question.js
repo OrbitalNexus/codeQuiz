@@ -52,7 +52,8 @@ function batmanHero () {
     userHighScore = JSON.parse(localStorage.getItem(USER_KEY)) || [];
     userHighScore.push(userBadScore);
     localStorage.setItem(USER_KEY, JSON.stringify(userHighScore));
-    
+    secondPlaceUser.textContent = userHighScore;
+
   }
 
 };
@@ -76,7 +77,6 @@ function nextQuestion() {
         scoreBoardMain.classList.remove("hide")
         newScore = timeEl.textContent = secondsLeft + 10;
         newUserScore.textContent = newScore;
-        console.log(`newUserScore: ${newUserScore}`)
         timeEl.classList.add("hide");
         highScore.classList.remove("hide")
         selectedAnswer.textContent = "";
